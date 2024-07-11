@@ -4,20 +4,24 @@ class BaseRepository{
     {
         this.collection=_collection;
     }
-    findAll(){
-        return this.collection.find().lean().exec();
+   async findAll(){
+        var data=await this.collection.find().lean().exec();
+        return data;
     }
-    findById(id){
-        return this.collection.findById(id);
+    async findById(id){
+        var data=await this.collection.findById(id);
     }
-    create(model){
-        return this.collection.create(model);
+    async create(model){
+        var data=await this.collection.create(model);
+        return data;
     }
-    update(model){
-        return this.collection.findByIdAndUpdate(model._id,model);
+    async update(model){
+        var data=await this.collection.findByIdAndUpdate(model._id,model);
+        return data;
     }
-    deleteById(id){
-        return this.collection.findByIdAndDelete(id);
+    async deleteById(id){
+        var data=await this.collection.findByIdAndDelete(id);
+        return data;
     }
 }
 module.exports=BaseRepository;
