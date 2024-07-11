@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+const mongoose= require('mongoose')
 
 const Schema=mongoose.Schema;
 const objectId=mongoose.Schema.Types.ObjectId;
@@ -12,5 +12,5 @@ const productsSchema=new Schema({
     versionKey:false,
 });
 
-const product=mongoose.model('products,productsSchema');
+const product=mongoose.model('product',productsSchema);
 module.exports=product;
